@@ -1,3 +1,7 @@
+:root{
+  --primary-color: #2196f3
+}
+
 .App {
   text-align: center;
 }
@@ -16,13 +20,16 @@
 
 .App-title {
   font-size: 1.5em;
+  color: white;
+  margin: 8px;
+}
+
+.ui.App-bar.menu {
+  background: var(--primary-color)
 }
 
 .App-intro {
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+
