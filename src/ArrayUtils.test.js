@@ -1,5 +1,5 @@
 import React from 'react'
-import * as ArrayUtils from './ArrayUtils'
+import * as ArrayUtils from './utils/ArrayUtils'
 
 describe('[Utils] Arrays functions', () => {
 

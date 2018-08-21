@@ -2,6 +2,18 @@
   --primary-color: #2196f3
 }
 
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body, .root {
+  height: 100%;
+}
+
 .App {
   text-align: center;
 }
@@ -32,4 +44,7 @@
   font-size: large;
 }
 
-
+.shelf-title{
+  font-size: 1.5em;
+  text-align: left;
+}
