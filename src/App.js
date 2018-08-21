@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {Button, Container, Menu} from 'semantic-ui-react'
 import './App.css';
-import * as BooksAPI from './utils/BooksAPI'
-import * as ArrayUtil from './utils/ArrayUtil'
+import * as BooksAPI from './BooksAPI'
+import * as ArrayUtils from './ArrayUtils'
 
 class App extends Component {
 
@@ -16,7 +16,7 @@ class App extends Component {
         };
 
         BooksAPI.getAll().then(allBooks => {
-            const books = ArrayUtil.groupBy(allBooks, getBooksByShelf);
+            const books = ArrayUtils.groupBy(allBooks, getBooksByShelf);
             this.setState({ books });
         })
     }
