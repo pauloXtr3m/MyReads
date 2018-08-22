@@ -48,3 +48,12 @@ html, body, .root {
   font-size: 1.5em;
   text-align: left;
 }
+
+.ui.image.book-image img{
+  height: 240px;
+  width: 180px;
+}
+.book{
+  margin-left: 18px;
+  margin-right: 18px;
+}
