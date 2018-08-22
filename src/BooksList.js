@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Divider, List} from 'semantic-ui-react';
+import Book from './Book';
 
 class BooksList extends Component {
 	render() {
@@ -12,7 +13,8 @@ class BooksList extends Component {
 			<div className='books-list'>
 				<List.Header className='shelf-title'>{shelfTitle}</List.Header>
 				<Divider/>
-				<List items={books.map(book => {return {key:book.id, image: book.imageLinks.smallThumbnail , content: book.title}})}/>
+				<List horizontal={true} animated={true}
+					  items={books.map(book => {return {key:book.id, content: (<Book data={book}/>)}})}/>
 			</div>)
 	}
 }
