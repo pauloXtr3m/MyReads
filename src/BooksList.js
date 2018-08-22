@@ -12,7 +12,7 @@ class BooksList extends Component {
 			<div className='books-list'>
 				<List.Header className='shelf-title'>{shelfTitle}</List.Header>
 				<Divider/>
-				<List items={books.map(book => {return {key:book.title, content: book.title}})}/>
+				<List items={books.map(book => {return {key:book.id, image: book.imageLinks.smallThumbnail , content: book.title}})}/>
 			</div>)
 	}
 }

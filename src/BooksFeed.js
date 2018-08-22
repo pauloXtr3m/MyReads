@@ -10,7 +10,7 @@ class BooksFeed extends Component {
 
 		return (
 			<div className='books-feed'>
-				<List items={booksLists.map(list => {return {content: (<BooksList books={list}/>)}})}/>
+				<List items={booksLists.map((list, index) => {return {key:index, content: (<BooksList books={list}/>)}})}/>
 			</div>
 		);
 	}
