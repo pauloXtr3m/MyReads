@@ -11,25 +11,36 @@ class App extends Component {
         books: []
     };
 
-    componentDidMount() {
-        const getBooksByShelf = item => {
-            return item.shelf;
-        };
+    onChange = (bookChanged) => {
+        let index = this.state.books.findIndex(book => book.id === bookChanged.id);
 
-        BooksAPI.getAll().then(allBooks => {
-            const books = ArrayUtils.groupBy(allBooks, getBooksByShelf);
+        this.setState(state => {
+			state.books[index] = bookChanged;
+			return {books: state.books};
+		})
+    };
+
+    componentDidMount() {
+
+        BooksAPI.getAll().then(books => {
             this.setState({ books });
         })
     }
 
     render() {
+		const getBooksByShelf = item => {
+			return item.shelf;
+		};
+
+		const booksByShelf = ArrayUtils.groupBy(this.state.books, getBooksByShelf);
+
         return (
             <div className="App">
                 <Menu className="App-bar">
                     <div className="App-title">My reads</div>
                 </Menu>
 				<Container>
-					<BooksFeed booksByShelf={this.state.books}/>
+					<BooksFeed onChange={this.onChange} booksByShelf={booksByShelf}/>
 				</Container>
             </div>
         );

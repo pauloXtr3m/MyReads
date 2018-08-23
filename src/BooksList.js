@@ -14,7 +14,8 @@ class BooksList extends Component {
 				<List.Header className='shelf-title'>{shelfTitle}</List.Header>
 				<Divider/>
 				<List horizontal={true} animated={true}
-					  items={books.map(book => {return {key:book.id, content: (<Book data={book}/>)}})}/>
+					  items={books.map(book =>
+					  {return {key: book.id, content: (<Book onChange={this.props.onChange} data={book}/>)}})}/>
 			</div>)
 	}
 }

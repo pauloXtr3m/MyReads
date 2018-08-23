@@ -10,7 +10,8 @@ class BooksFeed extends Component {
 
 		return (
 			<div className='books-feed'>
-				<List items={booksLists.map((list, index) => {return {key:index,content: (<BooksList books={list}/>)}})}/>
+				<List onChange={this.props.onChange}
+					items={booksLists.map((list, index) => {return {key:index,content: (<BooksList books={list}/>)}})}/>
 			</div>
 		);
 	}
