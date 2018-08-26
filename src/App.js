@@ -11,13 +11,15 @@ class App extends Component {
         books: []
     };
 
-    onChange = (bookChanged) => {
-        let index = this.state.books.findIndex(book => book.id === bookChanged.id);
+    onChange = (bookToChange, shelf) => {
+        let index = this.state.books.findIndex(book => book.id === bookToChange.id);
 
         this.setState(state => {
-			state.books[index] = bookChanged;
+			state.books[index].shelf = shelf;
 			return {books: state.books};
-		})
+		});
+
+        BooksAPI.update(bookToChange, shelf);
     };
 
     componentDidMount() {

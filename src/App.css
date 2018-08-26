@@ -44,6 +44,10 @@ html, body, .root {
   font-size: large;
 }
 
+.books-list{
+  margin-top: 32px;
+}
+
 .shelf-title{
   font-size: 1.5em;
   text-align: left;
@@ -53,7 +57,38 @@ html, body, .root {
   height: 240px;
   width: 180px;
 }
+
 .book{
+  position: relative;
   margin-left: 18px;
   margin-right: 18px;
+}
+
+.book-title{
+  width: 160px;
+  word-break: break-all;
+  text-overflow: ellipsis;
+}
+
+.book-edit {
+  position:absolute;
+  right: 8px;
+  top: 8px;
+}
+
+.ui.button.change-shelf-menu{
+  width: 160px;
+  background: white;
+}
+
+.list.change-shelf-menu{
+  position:absolute;
+  box-shadow: 1px 1px 12px #bdbdbd;
+  right: 8px;
+  top: 8px;
+  background: white;
+}
+
+.shelf-menu-title {
+  color: #757575;
 }
