@@ -31,10 +31,13 @@ class Book extends Component {
 			{
 				key: 201654,
 				content: (
-					<div className='shelf-menu-title'>
-						Move to
+					<div>
+						<div className='shelf-menu-title'>
+							Move to
+						</div>
 						<Divider/>
-					</div>)
+					</div>
+					)
 			});
 
 		shelves.forEach((shelf, index) => {

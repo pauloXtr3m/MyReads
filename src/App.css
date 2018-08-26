@@ -44,6 +44,17 @@ html, body, .root {
   font-size: large;
 }
 
+.ui.button.button-search{
+  background: var(--primary-color)
+}
+.ui.button:active.button-search{
+  background: var(--primary-color)
+}
+
+.ui.button.button-search i{
+  color: white;
+}
+
 .books-list{
   margin-top: 32px;
 }
@@ -79,6 +90,7 @@ html, body, .root {
 .ui.button.change-shelf-menu{
   width: 160px;
   background: white;
+  text-align: left;
 }
 
 .list.change-shelf-menu{
@@ -91,4 +103,5 @@ html, body, .root {
 
 .shelf-menu-title {
   color: #757575;
+  text-align: left;
 }
