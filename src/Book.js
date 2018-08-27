@@ -29,7 +29,7 @@ class Book extends Component {
 		let menuItems = [];
 		menuItems.push(
 			{
-				key: 201654,
+				key: 'move-to',
 				content: (
 					<div>
 						<div className='shelf-menu-title'>

@@ -13,7 +13,7 @@ class BooksFeed extends Component {
 		});
 
 		const items = booksLists.map((list, index) => {
-			return {key:index, content: (<BooksList books={list} shelves={shelves} onChange={onChange}/>)}
+			return {key:index, content: (<BooksList title books={list} shelves={shelves} onChange={onChange}/>)}
 		});
 
 		return (

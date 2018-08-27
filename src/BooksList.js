@@ -5,13 +5,18 @@ import * as StringUtils from './utils/StringUtils';
 
 class BooksList extends Component {
 	render() {
-		const {books, shelves, onChange} = this.props;
+		const {books, shelves, onChange, title} = this.props;
 
-		let shelfTitle = StringUtils.toPhraseUpperCase(books[0].shelf);
+		let shelfTitle;
+
+		if(title){
+            shelfTitle = StringUtils.toPhraseUpperCase(books[0].shelf);
+		}
+
 
 		return (
 			<div className='books-list'>
-				<List.Header className='shelf-title'>{shelfTitle}</List.Header>
+				{title && (<List.Header className='shelf-title'>{shelfTitle}</List.Header>)}
 				<Divider/>
 				<List floated='left' horizontal={true} animated={true}
 					  items={books.map(book =>
