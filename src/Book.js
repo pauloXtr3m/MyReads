@@ -58,7 +58,8 @@ class Book extends Component {
 							 onMouseLeave={this.onClickOptions}>
 							<List className='change-shelf-menu' items={menuItems}/>
 						</div>
-						<Item.Description className='book-title'>{data.title}</Item.Description>
+						<Item.Header className='book-title'>{data.title}</Item.Header>
+                        <Item.Description className='book-authors'>{data.authors.map(author => {return author})}</Item.Description>
 					</Item.Content>
 				</Item>
 			</div>

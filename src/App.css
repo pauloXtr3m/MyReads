@@ -75,10 +75,20 @@ html, body, .root {
   margin-right: 18px;
 }
 
-.book-title{
-  width: 160px;
-  word-break: break-all;
+.header.book-title{
+  width: 140px;
+  word-break: break-word;
   text-overflow: ellipsis;
+  margin-top: 8px !important;
+  /*margin-left: 12px !important;*/
+}
+
+.description.book-authors{
+  width: 140px;
+  word-break: break-word;
+  text-overflow: ellipsis;
+  margin-top: 8px;
+  /*margin-left: 12px !important;*/
 }
 
 .book-edit {
@@ -104,4 +114,8 @@ html, body, .root {
 .shelf-menu-title {
   color: #757575;
   text-align: left;
+}
+
+.item>.content> .header, .meta, .description{
+  text-align: left
 }
