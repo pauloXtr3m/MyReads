@@ -4,10 +4,9 @@ import BooksList from './BooksList'
 
 class BooksFeed extends Component {
 	render() {
-		const {booksByShelf, onChange} = this.props;
+		const {booksByShelf, shelves, onChange} = this.props;
 
 		let booksLists = [];
-		let shelves = ['currentlyReading', 'wantToRead', 'read'];
 		booksByShelf.forEach( entry => {
 			booksLists.push(entry);
 		});

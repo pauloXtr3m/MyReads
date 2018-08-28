@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import App from './App'
+import App from './containers/App'
 
 describe('<App />', () => {
 	it('shallow renders without crashing', () => {

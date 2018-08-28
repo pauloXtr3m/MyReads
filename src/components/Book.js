@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {List, Item, Button, Divider} from 'semantic-ui-react';
-import * as StringUtils from './utils/StringUtils';
+import * as StringUtils from '../utils/StringUtils';
 
 class Book extends Component {
 	state = {
