@@ -14,6 +14,10 @@ class Book extends Component {
 		});
 	};
 
+	hideMenu = () => {
+		this.setState({hiddenOptions: false});
+	};
+
 	onOptionClick = (ev, data) => {
 		const book = this.props.data;
 		const newShelf = StringUtils.removeSpaces(data.children);
@@ -38,7 +42,7 @@ class Book extends Component {
 						</div>
 						<Divider/>
 					</div>
-					)
+				)
 			});
 
 		shelves.forEach((shelf, index) => {
@@ -51,26 +55,30 @@ class Book extends Component {
 
 		return (
 
-				<div className='book'>
-					<Item>
-						<Item.Content>
-							<Link to={'/book/'+book.id}>
-								<Item.Image rounded
-											className='book-image' size='small'
-											src={book.imageLinks.smallThumbnail}/>
-							</Link>
+			<div className='book'>
+				<Item>
+					<Item.Content>
+						<Link to={'/book/' + book.id}>
+							<Item.Image rounded
+										className='book-image' size='small'
+										src={book.imageLinks.smallThumbnail}/>
+						</Link>
 
-							<Button className='book-edit' circular icon='edit' onClick={this.onClickOptions}/>
+						<Button className='book-edit' circular icon='edit' onClick={this.onClickOptions}/>
 
-							<div className='change-shelf-menu' hidden={this.state.hiddenOptions}
-								 onMouseLeave={this.onClickOptions}>
-								<List className='change-shelf-menu' items={menuItems}/>
-							</div>
-							<Item.Header className='book-title'>{book.title}</Item.Header>
-							<Item.Description className='book-authors'>{book.authors.map(author => {return author})}</Item.Description>
-						</Item.Content>
-					</Item>
-				</div>
+						<div className='change-shelf-menu' hidden={this.state.hiddenOptions}
+							 onMouseLeave={this.onClickOptions} onTouchMove={this.hideMenu}>
+							<List className='change-shelf-menu' items={menuItems}/>
+						</div>
+						<Item.Header className='book-title'>{book.title}</Item.Header>
+						<Item.Description className='book-authors'>
+							{book.authors.map(author => {
+								return author
+							})}
+						</Item.Description>
+					</Item.Content>
+				</Item>
+			</div>
 
 
 		);

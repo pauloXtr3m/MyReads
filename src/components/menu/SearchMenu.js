@@ -12,10 +12,9 @@ class SearchMenu extends Component {
 				<Menu.Item>
 					<Grid>
 						<Link to='/'><Button className='button-search' icon='arrow left'/></Link>
-						<div className="App-title">My reads</div>
 					</Grid>
 				</Menu.Item>
-				<Menu.Item position='right'>
+				<Menu.Item position='left'>
 					<SearchBooks books={books} onUserSearch={onUserSearch}/>
 				</Menu.Item>
 			</Menu>

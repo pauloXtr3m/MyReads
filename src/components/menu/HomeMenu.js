@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Menu, Icon} from 'semantic-ui-react';
+import {Button, Menu} from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
 
 const HomeMenu = () => (
@@ -10,10 +10,7 @@ const HomeMenu = () => (
 
 		<Menu.Item position='right'>
 			<Link to='/search'>
-				<Button className='button-search' icon>
-					Search
-					<Icon name='search' />
-				</Button>
+				<Button className='button-search' icon='search'/>
 			</Link>
 		</Menu.Item>
 	</Menu>

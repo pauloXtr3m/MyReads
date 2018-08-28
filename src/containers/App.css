@@ -1,5 +1,6 @@
 :root {
-    --primary-color: #2196f3
+    --primary-color: #795548;
+    --background-color:#fffde7;
 }
 
 html {
@@ -12,6 +13,7 @@ html {
 
 html, body, .root {
     height: 100%;
+    background: var(--background-color)
 }
 
 .App {
@@ -77,8 +79,7 @@ html, body, .root {
 
 .book {
     position: relative;
-    margin-left: 18px;
-    margin-right: 18px;
+    margin: 8px 18px 8px 18px;
 }
 
 .header.book-title {
@@ -118,4 +119,5 @@ html, body, .root {
 .shelf-menu-title {
     color: #757575;
     text-align: left;
+    margin-left:12px;
 }
