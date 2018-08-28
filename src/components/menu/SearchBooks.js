@@ -3,6 +3,7 @@ import {Search} from 'semantic-ui-react'
 import escapeRegExp from 'escape-string-regexp'
 
 class SearchBooks extends Component {
+
 	componentWillMount() {
 		this.resetComponent()
 	}
@@ -15,11 +16,11 @@ class SearchBooks extends Component {
 	};
 
 	handleSearchChange = (e, {value}) => {
+		const {books, onUserSearch }= this.props;
+
 		this.setState({isLoading: true, value});
 
 		setTimeout(() => {
-			const books = this.props.books;
-
 			if (this.state.value.length < 1) return this.resetComponent();
 
 			const match = new RegExp(escapeRegExp(this.state.value), 'i');
@@ -40,7 +41,7 @@ class SearchBooks extends Component {
 				filteredBooks: filteredBooks
 			});
 
-			this.props.onUserSearch(filteredBooks);
+			onUserSearch(filteredBooks);
 		}, 300)
 	};
 
@@ -54,7 +55,8 @@ class SearchBooks extends Component {
 				onSearchChange={this.handleSearchChange}
 				results={results}
 				value={value}
-				{...this.props}
+
+				{... this.books}
 			/>
 		);
 

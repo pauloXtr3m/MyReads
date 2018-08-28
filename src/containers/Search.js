@@ -15,11 +15,12 @@ class Search extends Component{
 
 	render(){
 		const {books, shelves, onChange} = this.props;
+		const {onUserSearch} = this;
 		const results = this.state.searchResults.length > 0 ? this.state.searchResults : books;
 
 		return (
 			<div className="App">
-				<SearchMenu books={books} onUserSearch={this.onUserSearch}/>
+				<SearchMenu books={books} onUserSearch={onUserSearch}/>
 				<Container className='app-container'>
 					<BooksList books={results} shelves={shelves} onChange={onChange}/>
 				</Container>
