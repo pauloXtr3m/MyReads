@@ -1,10 +1,11 @@
+import './App.css';
 import React, {Component} from 'react';
 import {Route} from 'react-router-dom'
-import './App.css';
 import * as BooksAPI from '../utils/BooksAPI'
 import * as ArrayUtils from '../utils/ArrayUtils'
 import Home from './Home';
 import Search from './Search';
+import Detail from './Detail';
 
 class App extends Component {
 
@@ -47,6 +48,8 @@ class App extends Component {
 				<Route path="/search" render={() => (
 					<Search books={books} shelves={shelves} onChange={this.onChange}/>
 				)}/>
+
+				<Route path="/book/:id" component={Detail}/>
 			</div>
 		);
 	}
